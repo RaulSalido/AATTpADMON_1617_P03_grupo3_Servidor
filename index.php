@@ -25,7 +25,7 @@
 
         <div class="principal">
 
-<!--            <div class="conexionBD">
+            <div class="conexionBD">
 
                 <p><h3>Lista de usuarios</h3></p>
 
@@ -46,7 +46,7 @@
                     }
                     ?>
                 </ul>
-            </div>-->
+            </div>
 
             <div id="formulario">
                 <h3>Autenticación con método POST</h3>
