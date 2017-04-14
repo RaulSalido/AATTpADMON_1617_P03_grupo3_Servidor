@@ -10,6 +10,8 @@
     <head>
 
         <title>Autenticación DNIe Servidor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
 
     </head>
 
@@ -19,16 +21,16 @@
 
             <p><h2>Práctica 3. Implementación de un servicio básico de autenticación con DNIe</h2></p>
 
-    </div>
+        </div>
 
-    <div class="principal">
+        <div class="principal">
 
-        <div class="formulario">
+<!--            <div class="conexionBD">
 
-            <p><h3>Lista de usuarios</h3></p>
+                <p><h3>Lista de usuarios</h3></p>
 
-            <ul>
-                <?php
+                <ul>
+                    <?php
                     $link = mysql_connect('localhost:3306', 'root', '') or die('Error al conectar con el servidor');
                     if (!$link) {
                         die('Could not connect to MySQL: ' . mysql_error());
@@ -40,15 +42,29 @@
                     $resultado = mysql_query($sql);
                     while ($row = mysql_fetch_assoc($resultado)) {
 
-                        echo "<li>" . $row["usuario"] . " " . $row["dni"] . "</li>";
+                        echo "<li>" . $row["usuario"] . " " . $row["DNI"] . "</li>";
                     }
-                ?>
-            </ul>
+                    ?>
+                </ul>
+            </div>-->
+
+            <div id="formulario">
+                <h3>Autenticación con método POST</h3>
+                    Usuario:&nbsp;<input type="text" name="usuario"> &nbsp; &nbsp;
+                    Clave:&nbsp;<input type="password" name="contraseña">
+                    <input type="submit"  value="enviar">
+            </div>
 
         </div>
 
-    </div>
+        <footer>
 
-</body>
+            <h2>Aplicaciones Telemáticas para la Administración</h2>
+            <p>Grado en Ingeniería Telemática</p>
+            <p>UNIVERSIDAD DE JAÉN</p>
+
+        </footer>
+
+    </body>
 
 </html>
