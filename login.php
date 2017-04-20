@@ -1,8 +1,14 @@
-<?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+<?php
+//En este archivo tenemos que realizar la validación de los datos recibidos por el formulario
+//del archivo index.php. La validación se realizara mediante POST y se hara a través de una base de datos.
+
+
+
+
+
+
+
+?>
 
