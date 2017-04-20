@@ -59,7 +59,8 @@
     <footer>
 
         <h2>Aplicaciones Telemáticas para la Administración</h2>
-        <p>Grado en Ingeniería Telemática</p>
+        <p>Raúl Salido Sánchez</p>
+        <p>Grado en Ingeniería Telemática. 3º Curso.</p>
         <p>UNIVERSIDAD DE JAÉN</p>
 
     </footer>
