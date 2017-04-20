@@ -19,9 +19,6 @@
     <div class="principal">
 
         <div class="conexionBD">
-
-            <p><h3>Lista de usuarios</h3></p>
-
             <ul>
                 <?php
                 $host = "localhost";
@@ -30,7 +27,7 @@
                 $db = "dnie_db";
                 $conexion = new mysqli($host, $usuario, $password, $db);
                 
-                if($mysqli->connect_errno){
+                if($conexion->connect_errno){
                     echo"Lo sentimos, no se ha podido establecer la conexión con la base de datos.";
                 }else{
                     echo"La conexión con la base de datos se ha realizado correctamente.";
