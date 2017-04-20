@@ -34,13 +34,7 @@
             </ul>
         </div>
 
-        <form id="formulario" action="#" method="post">
-            <!--                <h3>Autenticación con método POST</h3>
-                            
-                            Usuario:&nbsp;<input type="text" name="usuario" placeholder="ej: rsalido"> &nbsp; &nbsp;
-                            Clave:&nbsp;<input type="password" name="contraseña" placeholder="NIF o DNI">
-                            <input type="submit"  value="enviar">-->
-
+        <form id="formulario" action="login.php" method="post">
             <fieldset>                 
                 <label for="form">FORMULARIO DE ALTA DEL SERVICIO</label>
                 
