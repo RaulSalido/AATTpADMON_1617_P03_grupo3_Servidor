@@ -31,27 +31,27 @@
 
                 <ul>
                     <?php
-                    $link = mysql_connect('localhost:3306', 'root', '') or die('Error al conectar con el servidor');
-                    if (!$link) {
-                        die('Could not connect to MySQL: ' . mysql_error());
-                    }
+                        $link = mysql_connect('localhost:3306', 'root', '') or die('Error al conectar con el servidor');
+                        if (!$link) {
+                            die('Could not connect to MySQL: ' . mysql_error());
+                        }
 
-                    mysql_select_db('dni_db', $link) or die('Error al conectar con la base de datos');
+                        mysql_select_db('dni_db', $link) or die('Error al conectar con la base de datos');
 
-                    $sql = "SELECT * FROM usuarios";
-                    $resultado = mysql_query($sql);
-                    while ($row = mysql_fetch_assoc($resultado)) {
+                        $sql = "SELECT * FROM usuarios";
+                        $resultado = mysql_query($sql);
+                        while ($row = mysql_fetch_assoc($resultado)) {
 
-                        echo "<li>" . $row["usuario"] . " " . $row["DNI"] . "</li>";
-                    }
+                            echo "<li>" . $row["usuario"] . " " . $row["DNI"] . "</li>";
+                        }
                     ?>
                 </ul>
             </div>
 
-            <div id="formulario">
+            <div id="formulario" action="#" method="post">
                 <h3>Autenticación con método POST</h3>
-                    Usuario:&nbsp;<input type="text" name="usuario"> &nbsp; &nbsp;
-                    Clave:&nbsp;<input type="password" name="contraseña">
+                Usuario:&nbsp;<input type="text" name="usuario" placeholder="ej: rsalido"> &nbsp; &nbsp;
+                Clave:&nbsp;<input type="password" name="contraseña" placeholder="NIF o DNI">
                     <input type="submit"  value="enviar">
             </div>
 
