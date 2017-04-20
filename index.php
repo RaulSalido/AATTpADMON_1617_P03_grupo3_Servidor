@@ -23,13 +23,19 @@
             <p><h3>Lista de usuarios</h3></p>
 
             <ul>
-                <?php				
-                    $link = mysql_connect('localhost:3306', 'root', '') or die('Error al conectar con el servidor');
-                    if (!$link) {
-                        die('Could not connect to MySQL: ' . mysql_error());
-                    }
-
-                    mysql_select_db('dni_db', $link) or die('Error al conectar con la base de datos');				
+                <?php
+                $host = "localhost";
+                $usuario = "root";
+                $password = "";
+                $db = "dnie_db";
+                $conexion = new mysqli($host, $usuario, $password, $db);
+                
+                if($mysqli->connect_errno){
+                    echo"Lo sentimos, no se ha podido establecer la conexión con la base de datos.";
+                }else{
+                    echo"La conexión con la base de datos se ha realizado correctamente.";
+                }
+                
                 ?>
             </ul>
         </div>
@@ -37,7 +43,7 @@
         <form id="formulario" action="login.php" method="post">
             <fieldset>                 
                 <label for="form">FORMULARIO DE ALTA DEL SERVICIO</label>
-                
+
                 <label for="nombre">Nombre</label>
                 <input type="text" id="usuario" placeholder="ej: rsalido" />
                  
