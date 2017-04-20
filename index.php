@@ -23,22 +23,13 @@
             <p><h3>Lista de usuarios</h3></p>
 
             <ul>
-                <?php
-				
-                $link = mysql_connect('localhost:3306', 'root', '') or die('Error al conectar con el servidor');
-                if (!$link) {
-                    die('Could not connect to MySQL: ' . mysql_error());
-                }
+                <?php				
+                    $link = mysql_connect('localhost:3306', 'root', '') or die('Error al conectar con el servidor');
+                    if (!$link) {
+                        die('Could not connect to MySQL: ' . mysql_error());
+                    }
 
-                mysql_select_db('dni_db', $link) or die('Error al conectar con la base de datos');
-
-                $sql = "SELECT * FROM usuarios";
-                $resultado = mysql_query($sql);
-                while ($row = mysql_fetch_assoc($resultado)) {
-
-                     echo "<li>" . $row["usuario"] . " " . $row["DNI"] . "</li>";
-                }
-				
+                    mysql_select_db('dni_db', $link) or die('Error al conectar con la base de datos');				
                 ?>
             </ul>
         </div>
