@@ -1,14 +1,85 @@
+<html>
+    <head>
+        <title>Autenticación con DNIe</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
 
 
-<?php
-//En este archivo tenemos que realizar la validación de los datos recibidos por el formulario
-//del archivo index.php. La validación se realizara mediante POST y se hara a través de una base de datos.
+    <body>
+        <div id="texto">
+
+            <h2>Práctica 3. Implementación de un servicio básico de autenticación con DNIe</h2>
+
+        </div>
 
 
+        <div id="contenido">
+            <?php
+                $usuario = NULL;
+                $DNI = NULL;
+                $contraseña = NULL;
+                $autenticado = false;
+
+                $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
 
 
+                if ($usuario != NULL) {
 
+                    $DNI = filter_input(INPUT_POST, 'DNI', FILTER_SANITIZE_STRING);
+                    $contraseña = filter_input(INPUT_POST, 'contraseña', FILTER_SANITIZE_STRING);
 
+                    if ($DNI == NULL){      
+            ?>
+                <h3>Autenticando mediante POST</h3>
+            <?php
+                    }
+                    
+                $host = "localhost";
+                $usuario = "root";
+                $password = "";
+                $db = "dnie_db";
+                $conexion = new mysqli($host, $usuario, $password, $db);
+                
+                if($conexion->connect_errno){
+                    echo"Lo sentimos, no se ha podido establecer la conexión con la base de datos.";
+                }else{
+                    echo"La conexión con la base de datos se ha realizado correctamente.";
+                }
 
-?>
+                $sql = "SELECT * FROM usuarios";
+                $res = mysql_query($sql);
+                while ($row = mysql_fetch_assoc($res)) {
+                    if ($row["usuario"] == $usuario && $row["DNI"] == $DNI && $row["contraseña"] == $contraseña) {// . " " . $row["dni"] . "</li>";
+                        $autenticado = true;
+                    }
+                }
+
+                if ($autenticado) {
+            ?>
+                    <h4>Hola, <strong><?php echo $usuario . "</strong> con DNI " . $DNI; ?></h4>
+            <?php
+                } else {
+            ?>
+                    <h3>Autenticacion errónea.</h3>
+            <?php 
+                echo "<p><strong>" . $usuario . "</strong> no existe o los datos introducidos son incorrectos.</p>"; 
+            ?>
+                    
+            <?php
+                }
+            ?>          
+        </div>
+
+        
+        <footer>
+            <h2>Aplicaciones Telemáticas para la Administración</h2>
+            <p>Raúl Salido Sánchez</p>
+            <p>Grado en Ingeniería Telemática. 3º Curso.</p>
+            <p>UNIVERSIDAD DE JAÉN</p>
+        </footer>
+    </body>
+</html>
+
 
