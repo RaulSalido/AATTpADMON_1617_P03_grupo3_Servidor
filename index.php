@@ -18,9 +18,10 @@
 
     <div class="principal">
 
-        <div class="conexionBD">
+<!--        <div class="conexionBD">
             <ul>
                 <?php
+                /*
                 $host = "localhost";
                 $usuario = "root";
                 $password = "";
@@ -32,10 +33,10 @@
                 }else{
                     echo"La conexión con la base de datos se ha realizado correctamente.";
                 }
-                
+                */
                 ?>
             </ul>
-        </div>
+        </div>-->
 
         <form id="formulario" action="login.php" method="post">
             <fieldset>                 
