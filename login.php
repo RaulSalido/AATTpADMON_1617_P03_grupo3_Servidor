@@ -37,12 +37,13 @@
                 }else{
                     die("usuario en blanco");
                 }
-                    
+                
+                //aqui comienza la conexion con la base de datos y hacemos una consulta.
                 $host = "localhost";
-                $usuario = "root";
+                $usuariodb = "root";
                 $password = "";
                 $db = "dnie_db";
-                $conexion = new mysqli($host, $usuario, $password, $db);
+                $conexion = new mysqli($host, $usuariodb, $password, $db);
                 
                 if($conexion->connect_errno){
                     echo"Lo sentimos, no se ha podido establecer la conexión con la base de datos.";
