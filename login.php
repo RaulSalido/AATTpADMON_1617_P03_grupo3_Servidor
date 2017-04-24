@@ -30,11 +30,13 @@
                     $DNI = filter_input(INPUT_POST, 'DNI', FILTER_SANITIZE_STRING);
                     $contraseña = filter_input(INPUT_POST, 'contraseña', FILTER_SANITIZE_STRING);
 
-                    if ($DNI == NULL){      
+                    if ($DNI == NULL)      
             ?>
-                <h3>Autenticando mediante POST</h3>
+                        <h3>Autenticando mediante POST</h3>
             <?php
-                    }
+                }else{
+                    die("usuario en blanco");
+                }
                     
                 $host = "localhost";
                 $usuario = "root";
