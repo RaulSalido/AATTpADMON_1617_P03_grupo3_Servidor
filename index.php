@@ -46,7 +46,7 @@
                 <input type="text" id="usuario" placeholder="ej: rsalido" />
                  
                 <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena" placeholder="NIF o DNI" />
+                <input type="password" id="contraseña" placeholder="NIF o DNI" />
                  
                 <input class="btn" type="submit" value="Enviar" />
             </fieldset>
