@@ -17,7 +17,7 @@
 
         <div id="contenido">
             <?php
-                $usuario = NULL;
+                //$usuario = NULL;
                 $DNI = NULL;
                 $contraseña = NULL;
                 $autenticado = false;
@@ -30,10 +30,11 @@
                     $DNI = filter_input(INPUT_POST, 'DNI', FILTER_SANITIZE_STRING);
                     $contraseña = filter_input(INPUT_POST, 'contraseña', FILTER_SANITIZE_STRING);
 
-                    if ($DNI == NULL)      
+                    if ($DNI == NULL){
             ?>
                         <h3>Autenticando mediante POST</h3>
             <?php
+                    }
                 }else{
                     die("usuario en blanco");
                 }
