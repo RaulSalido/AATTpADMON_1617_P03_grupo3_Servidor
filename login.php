@@ -58,24 +58,18 @@ echo "CLAVE: ".$contraseña."<br/>";
                     echo"La conexión con la base de datos se ha realizado correctamente.";
                 }
 
-                $sql = "SELECT * FROM usuarios";
-//                $res = mysqli_query($sql);
-//                while ($row = mysql_fetch_assoc($res)) {
-//                    if ($row["usuario"] == $usuario && $row["DNI"] == $DNI && $row["contraseña"] == $contraseña) {// . " " . $row["dni"] . "</li>";
-//                        $autenticado = true;
-//                    }
-//                }
-                  $res = mysqli_query($conexion, $sql);
-                  while ($row = mysqli_fetch_row($res)){
-                      if ($row["usuario"] == $usuario && $row["contraseña"] == $contraseña) {
-                      $autenticado = true;
-                      }
-                  }
+                $sql = "SELECT * FROM usuarios";           
+                $res = mysqli_query($conexion, $sql);
+                    while ($row = mysqli_fetch_row($res)){
+                        if ($row[0] == $usuario && $row[2] == $contraseña) {
+                            $autenticado = true;
+                        }
+                    }
                 
 
                 if ($autenticado) {
             ?>
-                    <h4>Hola, <strong><?php echo $usuario . "</strong> con DNI " . $DNI; ?></h4>
+                    <h4>Hola, <strong><?php echo $usuario . "</strong> con DNI " . $contraseña; ?></h4>
             <?php
                 } else {
             ?>
