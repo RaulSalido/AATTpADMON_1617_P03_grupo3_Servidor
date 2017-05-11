@@ -22,15 +22,21 @@
                 $contraseña = NULL;
                 $autenticado = false;
 
+                $usuario=$_POST["usuario"];
+                        
+                echo "USUARIO 1: ".$usuario."<br/>";
+                        
                 $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
 
 
+                echo "USUARIO: ".$usuario."<br/>";
+                        
                 if ($usuario != NULL) {
 
                     $DNI = filter_input(INPUT_POST, 'DNI', FILTER_SANITIZE_STRING);
-                    $contraseña = filter_input(INPUT_POST, 'contraseña', FILTER_SANITIZE_STRING);
-
-                    if ($DNI == NULL){
+                    $contraseña = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+echo "CLAVE: ".$contraseña."<br/>";
+                    if ($contraseña != NULL){
             ?>
                         <h3>Autenticando mediante POST</h3>
             <?php
@@ -53,12 +59,19 @@
                 }
 
                 $sql = "SELECT * FROM usuarios";
-                $res = mysql_query($sql);
-                while ($row = mysql_fetch_assoc($res)) {
-                    if ($row["usuario"] == $usuario && $row["DNI"] == $DNI && $row["contraseña"] == $contraseña) {// . " " . $row["dni"] . "</li>";
-                        $autenticado = true;
-                    }
-                }
+//                $res = mysqli_query($sql);
+//                while ($row = mysql_fetch_assoc($res)) {
+//                    if ($row["usuario"] == $usuario && $row["DNI"] == $DNI && $row["contraseña"] == $contraseña) {// . " " . $row["dni"] . "</li>";
+//                        $autenticado = true;
+//                    }
+//                }
+                  $res = mysqli_query($conexion, $sql);
+                  while ($row = mysqli_fetch_row($res)){
+                      if ($row["usuario"] == $usuario && $row["contraseña"] == $contraseña) {
+                      $autenticado = true;
+                      }
+                  }
+                
 
                 if ($autenticado) {
             ?>

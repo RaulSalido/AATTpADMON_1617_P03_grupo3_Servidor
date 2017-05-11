@@ -38,15 +38,17 @@
             </ul>
         </div>-->
 
-        <form id="formulario" action="login.php" method="post">
+        
+
+<form id="formulario" action="login.php" method="post">
             <fieldset>                 
                 <label for="form">FORMULARIO DE ALTA DEL SERVICIO</label>
 
                 <label for="nombre">Nombre</label>
-                <input type="text" id="usuario" placeholder="ej: rsalido" />
+                <input type="text" name="usuario" placeholder="ej: rsalido" />
                  
                 <label for="contrasena">Contraseña</label>
-                <input type="password" id="contraseña" placeholder="NIF o DNI" />
+                <input type="password" name="password" placeholder="NIF o DNI" />
                  
                 <input class="btn" type="submit" value="Enviar" />
             </fieldset>
