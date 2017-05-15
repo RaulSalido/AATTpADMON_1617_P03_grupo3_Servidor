@@ -3,7 +3,7 @@
         <title>Autenticación con DNIe</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/Estiloindex.css">
     </head>
 
 
@@ -24,18 +24,18 @@
 
                 $usuario=$_POST["usuario"];
                         
-                echo "USUARIO 1: ".$usuario."<br/>";
+//                echo "USUARIO 1: ".$usuario."<br/>";
                         
                 $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
 
 
-                echo "USUARIO: ".$usuario."<br/>";
+//                echo "USUARIO: ".$usuario."<br/>";
                         
                 if ($usuario != NULL) {
 
                     $DNI = filter_input(INPUT_POST, 'DNI', FILTER_SANITIZE_STRING);
                     $contraseña = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-echo "CLAVE: ".$contraseña."<br/>";
+                    //echo "CLAVE: ".$contraseña."<br/>";
                     if ($contraseña != NULL){
             ?>
                         <h3>Autenticando mediante POST</h3>
