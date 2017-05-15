@@ -69,7 +69,7 @@
 
                 if ($autenticado) {
             ?>
-                    <h4>Hola, <strong><?php echo $usuario . "</strong> con DNI " . $contraseña; ?></h4>
+                    <h4>Hola, <?php echo $usuario . " con DNI " . $contraseña; ?></h4>
             <?php
                 } else {
             ?>
