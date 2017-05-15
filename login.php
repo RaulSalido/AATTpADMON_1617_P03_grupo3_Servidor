@@ -3,7 +3,7 @@
         <title>Autenticación con DNIe</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/Estiloindex.css">
+        <link href="Estilologin.css" rel="stylesheet" type="text/css"/>
     </head>
 
 
@@ -38,7 +38,7 @@
                     //echo "CLAVE: ".$contraseña."<br/>";
                     if ($contraseña != NULL){
             ?>
-                        <h3>Autenticando mediante POST</h3>
+                        <h3>Autenticado mediante POST</h3>
             <?php
                     }
                 }else{
