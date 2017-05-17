@@ -73,7 +73,7 @@
             <?php
                 } else {
             ?>
-                    <h3>Autenticacion errónea.</h3>
+                    <h4>Autenticacion errónea.</h4>
             <?php 
                 echo "<p><strong>" . $usuario . "</strong> no existe o los datos introducidos son incorrectos.</p>"; 
             ?>
